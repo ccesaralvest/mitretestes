@@ -21,6 +21,7 @@ export default function Menu() {
     { text: "SERVIÇOS", href: "#services" },
     { text: "ÁREAS COMUNS", href: "#areasComuns" },
     { text: "LOCALIZAÇÃO", href: "#maiorCrescimento" },
+    { text: "GASTRONOMIA", href: "#gastronomia" },
     { text: "SOBRE", href: "#showAboutUs" },
     /*   { text: "PLANTAS", href: "#plantas" }, */
     { text: "CONTATO", href: "#contact" },
@@ -33,7 +34,7 @@ export default function Menu() {
           {menuItems.map((menu, index) => (
             <React.Fragment key={index}>
               <li
-                className={`group relative text-sm sm:text-[.755em] md:text-sm px-2 cursor-pointer transition-transform duration-300 hover:scale-[1.04] before:w-0 hover:before:content-[''] hover:before:absolute hover:before:bottom-0 hover:before:left-1/2 hover:before:-translate-x-1/2 before:border-b before:border-transparent before:transition-all before:duration-500 hover:before:w-[90%] hover:before:border-b-foreground`}
+                className={`group relative text-sm sm:text-[.630em] md:text-[.700em] lg:text-[.875em] px-2 cursor-pointer transition-transform duration-300 hover:scale-[1.04] before:w-0 hover:before:content-[''] hover:before:absolute hover:before:bottom-0 hover:before:left-1/2 hover:before:-translate-x-1/2 before:border-b before:border-transparent before:transition-all before:duration-500 hover:before:w-[90%] hover:before:border-b-foreground`}
               >
                 <a
                   href={menu.href}
@@ -44,11 +45,7 @@ export default function Menu() {
               </li>
 
               {index < menuItems.length - 1 && (
-                <span
-                  className={`text-black`}
-                >
-                  |
-                </span>
+                <span className={`text-black`}>|</span>
               )}
             </React.Fragment>
           ))}

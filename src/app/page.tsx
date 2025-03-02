@@ -14,6 +14,7 @@ import { GoogleTagManager } from "@next/third-parties/google";
 
 import ContactModal from "@/components/ui/ContactModal";
 import MaiorCrescimento from "@/components/sections/8-MaiorCrescimento";
+import LocationItemOutput from "@/components/sections/9-b-Gastronomia";
 
 export default function Home() {
   return (
@@ -29,9 +30,10 @@ export default function Home() {
       <Services />
       <FloorPlan />
      {/*  <PlantasResidenciais /> */}
-      <MaiorCrescimento />
       {/* Componente antigo. */}
       {/* <Localizacao /> */}
+      <MaiorCrescimento />
+      <LocationItemOutput />
       <Contact />
       <Footer />
     </>

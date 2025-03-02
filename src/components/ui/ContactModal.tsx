@@ -57,7 +57,7 @@ const ContactModal: React.FC = () => {
           <p className="text-gray-600 mb-4 tracking-[1px]">Selecione uma opção a seguir:</p>
 
           <div className="space-y-3">
-            <a href="#contact" className="block">
+            <a href="#contact" className="block" onClick={toggleModal}>
               <div className="bg-gray-100 p-4 rounded-lg hover:bg-gray-200 transition cursor-pointer">
                 <div className="flex items-center">
                   <div className="flex-1">
@@ -80,7 +80,7 @@ const ContactModal: React.FC = () => {
               </div>
             </a>
 
-            <a href="#contact" className="block">
+            <a href="#contact" className="block" onClick={toggleModal}>
               <div className="bg-gray-100 p-4 rounded-lg hover:bg-gray-200 transition cursor-pointer">
                 <div className="flex items-center">
                   <div className="flex-1">
@@ -94,7 +94,7 @@ const ContactModal: React.FC = () => {
               </div>
             </a>
 
-            <a href="#contact" className="block">
+            <a href="#contact" className="block" onClick={toggleModal}>
               <div className="bg-gray-100 p-4 rounded-lg hover:bg-gray-200 transition cursor-pointer">
                 <div className="flex items-center">
                   <div className="flex-1">
@@ -116,6 +116,7 @@ const ContactModal: React.FC = () => {
             <a
               href="https://www.mitrerealty.com.br/seja-parceiro-mitre"
               className="block w-full w-full"
+              onClick={toggleModal}
             >
               <div className="bg-gray-100 p-4 rounded-lg hover:bg-gray-200 transition cursor-pointer">
                 <div className="flex items-center">
@@ -134,6 +135,7 @@ const ContactModal: React.FC = () => {
             <a
               href="https://www.mitrerealty.com.br/fornecedores"
               className="block"
+              onClick={toggleModal}
             >
               <div className="bg-gray-100 p-4 rounded-lg hover:bg-gray-200 transition cursor-pointer">
                 <div className="flex items-center">
