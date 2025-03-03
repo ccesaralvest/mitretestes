@@ -66,7 +66,7 @@ const SchedulingModal: React.FC<SchedulingModalProps> = ({
     },
   });
 
-  // Generate week days starting from current date
+ 
   const generateWeekDays = (): WeekDay[] => {
     const days: WeekDay[] = [];
     const dayNames = ["DOM", "SEG", "TER", "QUA", "QUI", "SEX", "SAB"];
@@ -147,7 +147,7 @@ const SchedulingModal: React.FC<SchedulingModalProps> = ({
         toast.error("Não foi possível enviar dados");
       }
     } finally {
-      setIsLoading(false); // Desativa o estado de carregamento
+      setIsLoading(false);  
     }
   };
 

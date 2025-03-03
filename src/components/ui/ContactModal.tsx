@@ -222,7 +222,7 @@ const ContactModal: React.FC = () => {
 
       {formSubmitted && submittedData && (
         <FinalModal
-          isOpen={isOpen}
+          isOpen={true}
           submittedData={submittedData}
           onClose={toggleModal}  
         />

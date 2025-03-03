@@ -13,7 +13,7 @@ interface FinalModalProps {
 
 const FinalModal: React.FC<FinalModalProps> = ({
   isOpen,
-  onClose,
+  /* onClose, */
   submittedData,
 }) => {
   const [closeFinal, setCloseFinal] = useState(true);
@@ -25,7 +25,7 @@ const FinalModal: React.FC<FinalModalProps> = ({
       {closeFinal && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
-          onClick={onClose}
+          onClick={() => setCloseFinal(!closeFinal)}
         >
           <div
             className="bg-white p-6 rounded-lg shadow-md max-w-md w-full"
