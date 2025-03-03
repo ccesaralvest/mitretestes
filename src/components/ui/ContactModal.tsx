@@ -23,7 +23,7 @@ const ContactModal: React.FC = () => {
   };
 
   const openExternalForm = (canal?: string): void => {
-    const url = `https://leads.mitrerealty.com.br/api-leads/atendimento?id_produto=1234&utm_source=Midia${
+    const url = `https://leads.mitrerealty.com.br/api-leads/atendimento?id_produto=1226&utm_source=Midia${
       canal ? `&canal=${canal}` : ""
     }`;
 
