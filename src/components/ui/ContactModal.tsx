@@ -2,6 +2,18 @@
 import React, { useState } from "react";
 import { X, Calendar, Briefcase, HardHat } from "lucide-react";
 import Image from "next/image";
+import SchedulingModal from "../sections/11-SchedulingModal";
+import FinalModal from "./FinalModal";
+
+interface FormData {
+  name: string;
+  email: string;
+  fone: string;
+  message: string;
+  date: string;
+  time: string;
+  privacyPolicy: boolean;
+}
 
 const ContactModal: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,6 +28,25 @@ const ContactModal: React.FC = () => {
     }`;
 
     window.open(url, "_blank", "width=800,height=600");
+  };
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [submittedData, setSubmittedData] = useState<FormData | null>(null);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleSubmit = (formData: FormData) => {
+    console.log("Form submitted:", formData);
+    setSubmittedData(formData);
+    setFormSubmitted(true);
+    setIsModalOpen(false);
   };
 
   return (
@@ -97,7 +128,13 @@ const ContactModal: React.FC = () => {
               </div>
             </a>
 
-            <a href="#contact" className="block" onClick={toggleModal}>
+            <div
+              className="block"
+              onClick={() => {
+                toggleModal();
+                handleOpenModal();
+              }}
+            >
               <div className="bg-gray-100 p-4 rounded-lg hover:bg-gray-200 transition cursor-pointer">
                 <div className="flex items-center">
                   <div className="flex-1">
@@ -109,7 +146,7 @@ const ContactModal: React.FC = () => {
                   <Calendar className="w-6 h-6 text-[#9e4638]" />
                 </div>
               </div>
-            </a>
+            </div>
 
             <a
               href="#contact"
@@ -182,6 +219,20 @@ const ContactModal: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {formSubmitted && submittedData && (
+        <FinalModal
+          isOpen={isOpen}
+          submittedData={submittedData}
+          onClose={toggleModal}  
+        />
+      )}
+
+      <SchedulingModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        onSubmit={handleSubmit}
+      />
     </>
   );
 };
