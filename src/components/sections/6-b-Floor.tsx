@@ -33,7 +33,7 @@ const FloorPlan: React.FC = () => {
   ];
 
   return (
-    <section id="areasComuns" className="relative min-h-screen mb-[16px] sm:mb-[0] md:pt-[54px] lg:pt-[74px]">
+    <section id="areasComuns" className="relative min-h-screen mb-[16px] sm:mb-[0] md:py-[54px] lg:pt-[74px]">
       <img
         src="/imgs/old-cement.svg"
         className="absolute md:hidden bottom-0 right-0"

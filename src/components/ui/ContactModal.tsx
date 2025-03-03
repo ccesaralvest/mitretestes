@@ -10,14 +10,6 @@ const ContactModal: React.FC = () => {
     setIsOpen(!isOpen);
   };
 
-  const openExternalForm = (canal?: string): void => {
-    const url = `https://leads.mitrerealty.com.br/api-leads/atendimento?id_produto=1234&utm_source=Midia${
-      canal ? `&canal=${canal}` : ""
-    }`;
-
-    window.open(url, "_blank", "width=800,height=600");
-  };
-
   return (
     <>
       <button
@@ -62,19 +54,10 @@ const ContactModal: React.FC = () => {
         </div>
 
         <div className="p-4">
-          <p className="text-gray-600 mb-4 tracking-[1px]">
-            Selecione uma opção a seguir:
-          </p>
+          <p className="text-gray-600 mb-4 tracking-[1px]">Selecione uma opção a seguir:</p>
 
           <div className="space-y-3">
-            <a
-              href="#contact"
-              className="block"
-              onClick={(e) => {
-                e.preventDefault();
-                openExternalForm("whatsapp");
-              }}
-            >
+            <a href="#contact" className="block" onClick={toggleModal}>
               <div className="bg-gray-100 p-4 rounded-lg hover:bg-gray-200 transition cursor-pointer">
                 <div className="flex items-center">
                   <div className="flex-1">
@@ -111,24 +94,13 @@ const ContactModal: React.FC = () => {
               </div>
             </a>
 
-            <a
-              href="#contact"
-              className="block"
-              onClick={(e) => {
-                e.preventDefault();
-                openExternalForm();
-              }}
-            >
+            <a href="#contact" className="block" onClick={toggleModal}>
               <div className="bg-gray-100 p-4 rounded-lg hover:bg-gray-200 transition cursor-pointer">
                 <div className="flex items-center">
                   <div className="flex-1">
-                    <h3 className="text-[#9e4638] tracking-[1px] font-medium">
-                      CHAT ONLINE
-                    </h3>
+                    <h3 className="text-[#9e4638] tracking-[1px] font-medium">CHAT ONLINE</h3>
                     <div className="border-b-2 border-[#9e4638] w-[30%] my-1"></div>
-                    <p className="text-gray-600 text-sm tracking-[1px]">
-                      DAS 9H ÀS 22H
-                    </p>
+                    <p className="text-gray-600 text-sm tracking-[1px]">DAS 9H ÀS 22H</p>
                   </div>
                   <Image
                     src="/imgs/contato-balao.png"
@@ -149,9 +121,7 @@ const ContactModal: React.FC = () => {
               <div className="bg-gray-100 p-4 rounded-lg hover:bg-gray-200 transition cursor-pointer">
                 <div className="flex items-center">
                   <div className="flex-1">
-                    <h3 className="text-[#9e4638] tracking-[1px] font-medium">
-                      PARCERIAS
-                    </h3>
+                    <h3 className="text-[#9e4638] tracking-[1px] font-medium">PARCERIAS</h3>
                     <div className="border-b-2 border-[#9e4638] w-[30%] my-1"></div>
                     <p className="text-gray-600 tracking-[1px] text-sm">
                       Seja um corretor ou imobiliária parceira da Mitre
@@ -170,9 +140,7 @@ const ContactModal: React.FC = () => {
               <div className="bg-gray-100 p-4 rounded-lg hover:bg-gray-200 transition cursor-pointer">
                 <div className="flex items-center">
                   <div className="flex-1">
-                    <h3 className="text-[#9e4638] tracking-[1px] font-medium">
-                      FORNECEDORES
-                    </h3>
+                    <h3 className="text-[#9e4638] tracking-[1px] font-medium">FORNECEDORES</h3>
                     <div className="border-b-2 border-[#9e4638] w-[30%] my-1"></div>
                   </div>
                   <HardHat className="w-6 h-6 text-[#9e4638]" />

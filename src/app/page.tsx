@@ -5,7 +5,7 @@ import VideoPreview from "@/components/sections/4-VideoPreview";
 import Services from "@/components/sections/5-Services";
 import Tribeca from "@/components/sections/2-Tribeca";
 import Professionals from "@/components/sections/3-Professionals";
-/* import PlantasResidenciais from "@/components/sections/7-PlantasResidenciais"; */
+import PlantasResidenciais from "@/components/sections/7-PlantasResidenciais";
 /* import Localizacao from "@/components/sections/8-Localizacao"; */
 import Contact from "@/components/sections/9-Contact";
 import Footer from "@/components/sections/10-Footer";
@@ -29,7 +29,7 @@ export default function Home() {
       <ImageCarousel />
       <Services />
       <FloorPlan />
-     {/*  <PlantasResidenciais /> */}
+      <PlantasResidenciais />
       {/* Componente antigo. */}
       {/* <Localizacao /> */}
       <MaiorCrescimento />

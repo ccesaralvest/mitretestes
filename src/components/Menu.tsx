@@ -20,21 +20,21 @@ export default function Menu() {
     { text: "GALERIA", href: "#galeria" },
     { text: "SERVIÇOS", href: "#services" },
     { text: "ÁREAS COMUNS", href: "#areasComuns" },
+    { text: "PLANTAS", href: "#plantas-residenciais" },
     { text: "LOCALIZAÇÃO", href: "#maiorCrescimento" },
     { text: "GASTRONOMIA", href: "#gastronomia" },
     { text: "SOBRE", href: "#showAboutUs" },
-    /*   { text: "PLANTAS", href: "#plantas" }, */
     { text: "CONTATO", href: "#contact" },
   ];
 
   return (
     <div>
       <div>
-        <ul className="sm:flex justify-center items-center font-unineue text-black uppercase xl:text-[1.2em] header-ul-primary hidden">
+        <ul className="sm:flex justify-center items-center font-unineue text-black uppercase  header-ul-primary hidden">
           {menuItems.map((menu, index) => (
             <React.Fragment key={index}>
               <li
-                className={`group relative text-sm sm:text-[.630em] md:text-[.700em] lg:text-[.875em] px-2 cursor-pointer transition-transform duration-300 hover:scale-[1.04] before:w-0 hover:before:content-[''] hover:before:absolute hover:before:bottom-0 hover:before:left-1/2 hover:before:-translate-x-1/2 before:border-b before:border-transparent before:transition-all before:duration-500 hover:before:w-[90%] hover:before:border-b-foreground`}
+                className={`group relative text-sm sm:text-[.550em] md:text-[.700em] lg:text-[.875em] px-2 cursor-pointer transition-transform duration-300 hover:scale-[1.04] before:w-0 hover:before:content-[''] hover:before:absolute hover:before:bottom-0 hover:before:left-1/2 hover:before:-translate-x-1/2 before:border-b before:border-transparent before:transition-all before:duration-500 hover:before:w-[90%] hover:before:border-b-foreground`}
               >
                 <a
                   href={menu.href}
