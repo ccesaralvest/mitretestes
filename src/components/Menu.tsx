@@ -23,7 +23,7 @@ export default function Menu() {
     { text: "PLANTAS", href: "#plantas-residenciais" },
     { text: "LOCALIZAÇÃO", href: "#maiorCrescimento" },
     { text: "GASTRONOMIA", href: "#gastronomia" },
-    { text: "SOBRE", href: "#showAboutUs" },
+   /*  { text: "SOBRE", href: "#showAboutUs" }, */
     { text: "CONTATO", href: "#contact" },
   ];
 

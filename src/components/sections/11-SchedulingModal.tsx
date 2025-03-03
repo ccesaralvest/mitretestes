@@ -54,7 +54,6 @@ const SchedulingModal: React.FC<SchedulingModalProps> = ({
     handleSubmit,
     setValue,
     formState: { errors },
-    watch,
   } = useForm<FormData>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
