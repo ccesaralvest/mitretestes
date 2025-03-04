@@ -1,15 +1,7 @@
 "use client";
 import React from "react";
 import { Calendar } from "lucide-react";
-import Image from "next/image";
 
-/* interface EventCardComponentProps {
-  title: string;
-  description: string;
-  dates: string;
-  time: string;
-  imageUrl: string;
-} */
 const events = [
   {
     title: "CIA ATHLETICA",
