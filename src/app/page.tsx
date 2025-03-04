@@ -13,8 +13,10 @@ import FloorPlan from "@/components/sections/6-b-Floor";
 import { GoogleTagManager } from "@next/third-parties/google";
 
 import ContactModal from "@/components/ui/ContactModal";
-import MaiorCrescimento from "@/components/sections/8-MaiorCrescimento";
+ 
 import LocationItemOutput from "@/components/sections/9-b-Gastronomia";
+import EventCardComponent from "@/components/sections/12-Event";
+import LocalCity from "@/components/sections/8-LocalCity";
 
 export default function Home() {
   return (
@@ -31,8 +33,9 @@ export default function Home() {
       <FloorPlan />
       <PlantasResidenciais />
       {/* Componente antigo. */}
-      {/* <Localizacao /> */}
-      <MaiorCrescimento />
+      
+      <LocalCity />
+      <EventCardComponent />
       <LocationItemOutput />
       <Contact />
       <Footer />

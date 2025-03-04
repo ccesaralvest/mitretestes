@@ -21,9 +21,9 @@ export default function Menu() {
     { text: "SERVIÇOS", href: "#services" },
     { text: "ÁREAS COMUNS", href: "#areasComuns" },
     { text: "PLANTAS", href: "#plantas-residenciais" },
-    { text: "LOCALIZAÇÃO", href: "#maiorCrescimento" },
+    { text: "LOCALIZAÇÃO", href: "#localCity" },
     { text: "GASTRONOMIA", href: "#gastronomia" },
-   /*  { text: "SOBRE", href: "#showAboutUs" }, */
+    { text: "EVENTOS", href: "#eventCard" },
     { text: "CONTATO", href: "#contact" },
   ];
 
