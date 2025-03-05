@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Calendar } from "lucide-react";
+import { title } from "process";
 
 const events = [
   {
@@ -40,11 +41,12 @@ const events = [
 const EventCardComponent = ({ onEventSelect }: any) => {
   const handleRegisterClick = (event: any) => {
     const eventData = {
-      name: event.title,
-      email: "", // Pode ser preenchido posteriormente
-      fone: "", // Pode ser preenchido posteriormente
+      name: "",
+      email: "",  
+      fone: "",  
       date: event.dates,
       time: event.time,
+      title: event.title,
     };
 
     console.log("Evento Selecionado:", eventData);

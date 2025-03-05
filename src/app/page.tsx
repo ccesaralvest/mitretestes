@@ -39,7 +39,7 @@ const InputFormSchema = z.object({
 export default function Home() {
   const [showEventOnly, setShowEventOnly] = useState(false);
   const [readPolicy, setReadPolicy] = useState(false);
-  const [eventData, setEventData] = useState<{ name: string; email: string; fone: string; date: string; time: string } | null>(null);
+  const [eventData, setEventData] = useState<{ name: string; email: string; fone: string; date: string; time: string, title: string } | null>(null);
 
   const {
     register,
@@ -60,7 +60,7 @@ export default function Home() {
   };
 
   // Captura os valores do EventCardComponent
-  const handleEventData = (data: { name: string; email: string; fone: string; date: string; time: string }) => {
+  const handleEventData = (data: { name: string; email: string; fone: string; date: string; time: string, title: string }) => {
     setEventData(data);
   };
 
@@ -100,7 +100,7 @@ export default function Home() {
       setValue("name", eventData.name);
       setValue("email", eventData.email);
       setValue("fone", eventData.fone);
-      setValue("message", `AGENDAMENTO: data: ${eventData.date}, hora: ${eventData.time}`);
+      setValue("message", `AGENDAMENTO: evento: ${eventData.title}, data: ${eventData.date}, hora: ${eventData.time}`);
     }
   }, [eventData, setValue]);
 
