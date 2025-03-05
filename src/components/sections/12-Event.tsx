@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Calendar } from "lucide-react";
-import { title } from "process";
+ 
 
 const events = [
   {

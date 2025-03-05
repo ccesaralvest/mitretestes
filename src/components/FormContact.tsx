@@ -4,12 +4,33 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "./ui/card";
 import { Checkbox } from "./ui/checkbox";
+import { SubmitHandler, UseFormHandleSubmit, UseFormRegister, FieldErrors } from "react-hook-form";
 
 
+interface ContactFormProps {
+  handleSubmit: UseFormHandleSubmit<FormValues>;
+  register: UseFormRegister<FormValues>;
+  errors: FieldErrors<FormValues>;
+  onSubmit: SubmitHandler<FormValues>;
+  readPolicy: boolean;
+  setReadPolicy: (checked: boolean) => void;
+}
 
+interface FormValues {
+  name: string;
+  email: string;
+  fone: string;
+  message: string;
+}
 
-
-export default function ContactForm({handleSubmit, register, errors, onSubmit, readPolicy, setReadPolicy}: any) {
+export default function ContactForm({
+  handleSubmit,
+  register,
+  errors,
+  onSubmit,
+  readPolicy,
+  setReadPolicy,
+}: ContactFormProps) {
 
 
   return (

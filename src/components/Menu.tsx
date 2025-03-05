@@ -27,7 +27,7 @@ export default function Menu() {
     { text: "CONTATO", href: "#contact" },
   ];
 
-  const handleMenuClick = (event: React.MouseEvent<HTMLAnchorElement>, href: any) => {
+  const handleMenuClick = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     event.preventDefault();
 
     if (window.location.hash === "#eventCard" || window.location.hash === "#contact") {
