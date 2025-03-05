@@ -100,7 +100,7 @@ export default function Home() {
       setValue("name", eventData.name);
       setValue("email", eventData.email);
       setValue("fone", eventData.fone);
-      setValue("message", `AGENDAMENTO: evento: ${eventData.title}, data: ${eventData.date}, hora: ${eventData.time}`);
+      setValue("message", `AGENDAMENTO  - Evento: ${eventData.title}, data: ${eventData.date}, hora: ${eventData.time}`);
     }
   }, [eventData, setValue]);
 

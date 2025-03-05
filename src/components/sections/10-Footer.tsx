@@ -15,6 +15,7 @@ export default function Footer() {
             width={200}
             height={100}
           />
+        <p className="max-w-[200px] mt-[-12px] font-unineue text-gray-400 text-[12px] text-center text-white">CRECI J-26794</p>
         </div>
       </div>
       <div className="border border-[#803A2C]  w-[18.25rem] xl:w-[50%]"></div>
