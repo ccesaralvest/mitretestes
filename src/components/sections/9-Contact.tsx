@@ -1,7 +1,7 @@
 "use client";
 import FormContact from "../FormContact";
 
-export default function Contact() {
+export default function Contact( {handleSubmit, register, errors, onSubmit, readPolicy, setReadPolicy}: any) {
   return (
     <section id="contact">
       <div className="flex flex-col items-center w-full pt-[67px]">
@@ -15,7 +15,7 @@ export default function Contact() {
           </div>
         </div>
         <div>
-          <FormContact />
+          <FormContact handleSubmit={handleSubmit} register={register} errors={errors} onSubmit={onSubmit} readPolicy={readPolicy} setReadPolicy={setReadPolicy} />
         </div>
         <div className="relative w-full h-[11.3rem] bg-[#803A2C]  ">
           <div className="absolute -top-32 bg-[#803A2C] h-full w-full"></div>

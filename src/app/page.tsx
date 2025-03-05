@@ -16,9 +16,53 @@ import ContactModal from "@/components/ui/ContactModal";
 import LocationItemOutput from "@/components/sections/9-b-Gastronomia";
 import EventCardComponent from "@/components/sections/12-Event";
 import LocalCity from "@/components/sections/8-LocalCity";
+import { type LeadResponseOrUndefined, postLead } from "@/api/Leads";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { toast } from "sonner";
+
+type InputForm = {
+  name: string;
+  email: string;
+  fone: string;
+  message: string;
+};
+
+const InputFormSchema = z.object({
+  name: z.string().min(3, "Nome deve ter pelo menos 3 caracteres"),
+  email: z.string().email("Email inválido"),
+  fone: z.string().regex(/^\+?[0-9]{10,15}$/, "Telefone inválido"),
+  message: z.string().min(10, "Mensagem deve ter pelo menos 10 caracteres"),
+});
 
 export default function Home() {
   const [showEventOnly, setShowEventOnly] = useState(false);
+  const [readPolicy, setReadPolicy] = useState(false);
+  const [eventData, setEventData] = useState<{ name: string; email: string; fone: string; date: string; time: string } | null>(null);
+
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { errors },
+  } = useForm<InputForm>({
+    resolver: zodResolver(InputFormSchema),
+  });
+
+  const onSubmit = async (data: InputForm) => {
+    try {
+      const response: LeadResponseOrUndefined = await postLead(data);
+      if (response) toast.success(response.message);
+    } catch (error: unknown) {
+      toast.error(error instanceof Error ? error.message : "Não foi possível enviar os dados");
+    }
+  };
+
+  // Captura os valores do EventCardComponent
+  const handleEventData = (data: { name: string; email: string; fone: string; date: string; time: string }) => {
+    setEventData(data);
+  };
 
   useEffect(() => {
     const checkHash = () => {
@@ -29,29 +73,17 @@ export default function Home() {
 
     checkHash();
     window.addEventListener("hashchange", checkHash);
-
-    return () => {
-      window.removeEventListener("hashchange", checkHash);
-    };
+    return () => window.removeEventListener("hashchange", checkHash);
   }, []);
 
   useEffect(() => {
     if (showEventOnly) {
       setTimeout(() => {
-        if (window.location.hash === "#contact") {
-          document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-        }
-        if (window.location.hash === "#eventCard") {
-          document.getElementById("eventCard")?.scrollIntoView({ behavior: "smooth" });
-        }
-     
-        
-      
+        document.getElementById(window.location.hash.substring(1))?.scrollIntoView({ behavior: "smooth" });
       }, 500);
     }
   }, [showEventOnly]);
 
-  
   useEffect(() => {
     if (!showEventOnly) {
       setTimeout(() => {
@@ -63,6 +95,15 @@ export default function Home() {
     }
   }, [showEventOnly]);
 
+  useEffect(() => {
+    if (eventData) {
+      setValue("name", eventData.name);
+      setValue("email", eventData.email);
+      setValue("fone", eventData.fone);
+      setValue("message", `AGENDAMENTO: data: ${eventData.date}, hora: ${eventData.time}`);
+    }
+  }, [eventData, setValue]);
+
   return (
     <>
       <GoogleTagManager gtmId="GTM-WH8G73M8" />
@@ -71,8 +112,15 @@ export default function Home() {
 
       {showEventOnly ? (
         <>
-          <EventCardComponent />
-          <Contact />
+          <EventCardComponent onEventSelect={handleEventData} />
+          <Contact
+            handleSubmit={handleSubmit}
+            register={register}
+            errors={errors}
+            onSubmit={onSubmit}
+            readPolicy={readPolicy}
+            setReadPolicy={setReadPolicy}
+          />
         </>
       ) : (
         <>

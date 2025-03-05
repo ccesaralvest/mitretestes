@@ -37,7 +37,19 @@ const events = [
   },
 ];
 
-const EventCardComponent = () => {
+const EventCardComponent = ({ onEventSelect }: any) => {
+  const handleRegisterClick = (event: any) => {
+    const eventData = {
+      name: event.title,
+      email: "", // Pode ser preenchido posteriormente
+      fone: "", // Pode ser preenchido posteriormente
+      date: event.dates,
+      time: event.time,
+    };
+
+    console.log("Evento Selecionado:", eventData);
+    onEventSelect(eventData);
+  };
   return (
     <section
       id="eventCard"
@@ -82,7 +94,10 @@ const EventCardComponent = () => {
         <div className="absolute w-full h-full bg-[url(/imgs/bg-eventComponents.png)] opacity-[0.4] bg-cover bg-center bg-no-repeat"></div>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 sm:p-8 sm:px-12">
           {events.map((event, index) => (
-            <div key={index} className="relative md:min-h-[500px] flex flex-col justify-between">
+            <div
+              key={index}
+              className="relative md:min-h-[500px] flex flex-col justify-between"
+            >
               <div className="overflow-hidden">
                 <img
                   src={event.imageUrl}
@@ -112,11 +127,14 @@ const EventCardComponent = () => {
                   {event.time}
                 </p>
 
-                <button className="relative font-unineue ml-6  tracking-[0.09em] font-normal mt-2 bg-[#8B3A2A] text-white uppercase text-sm py-1 px-6 hover:bg-[#6d2e21] transition-colors">
-                <div className="hidden sm:block absolute w-[12rem] top-0 left-[-3.4rem] border-t border-foreground  border-1 "></div>
-                
+                <a
+                  href="#contact"
+                  onClick={() => handleRegisterClick(event)}
+                  className="relative font-unineue ml-6  tracking-[0.09em] font-normal mt-2 bg-[#8B3A2A] text-white uppercase text-sm py-1 px-6 hover:bg-[#6d2e21] transition-colors"
+                >
+                  <div className="hidden sm:block absolute w-[12rem] top-0 left-[-3.4rem] border-t border-foreground  border-1 "></div>
                   Inscreva-se
-                </button>
+                </a>
               </div>
             </div>
           ))}
