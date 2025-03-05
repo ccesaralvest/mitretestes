@@ -1,6 +1,6 @@
 "use client";
 import FormContact from "../FormContact";
-import { SubmitHandler, UseFormRegister, FieldErrors, UseFormHandleSubmit, UseFormGetValues } from "react-hook-form";
+import { SubmitHandler, UseFormRegister, FieldErrors, UseFormHandleSubmit } from "react-hook-form";
 
 // Definição da interface para as props
  
