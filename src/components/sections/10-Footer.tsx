@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="w-full h-[61.81rem] bg-black flex flex-col items-center gap-14 py-20 px-10">
       <div className="sm:flex gap-8">
-        <div className="relative w-[10.42rem] h-[2.45rem] xl:w-[257px] hidden">
+        <div className="relative w-[10.42rem] h-[2.45rem] xl:w-[257px]">
           <Image src="./imgs/mitre.svg" alt="Mitre" width={200} height={100} />
         </div>
         <div className="relative w-[10.42rem] h-[2.45rem] xl:w-[257px] ">

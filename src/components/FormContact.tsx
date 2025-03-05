@@ -1,54 +1,37 @@
 "use client";
-import { z } from "zod";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "./ui/card";
 import { Checkbox } from "./ui/checkbox";
-import { toast } from "sonner";
-import { useState } from "react";
-import { type LeadResponseOrUndefined, postLead } from "@/api/Leads";
+import { SubmitHandler, UseFormHandleSubmit, UseFormRegister, FieldErrors } from "react-hook-form";
 
-type InputForm = {
+
+interface ContactFormProps {
+  handleSubmit: UseFormHandleSubmit<FormValues>;
+  register: UseFormRegister<FormValues>;
+  errors: FieldErrors<FormValues>;
+  onSubmit: SubmitHandler<FormValues>;
+  readPolicy: boolean;
+  setReadPolicy: (checked: boolean) => void;
+}
+
+interface FormValues {
   name: string;
   email: string;
   fone: string;
   message: string;
-};
+}
 
-const InputFormSchema = z.object({
-  name: z.string().min(3, "Nome tem que possuir pelo menos 3 caracteres"),
-  email: z.string().email("Email inválido"),
-  fone: z.string().regex(/^\+?[0-9]{10,15}$/, "Telfone inválido"),
-  message: z
-    .string()
-    .min(10, "Mensagem tem que possuir pelo menos 10 caracteres"),
-});
+export default function ContactForm({
+  handleSubmit,
+  register,
+  errors,
+  onSubmit,
+  readPolicy,
+  setReadPolicy,
+}: ContactFormProps) {
 
-export default function ContactForm() {
-  const [readPolicy, setReadPolicy] = useState(false);
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<InputForm>({
-    resolver: zodResolver(InputFormSchema),
-  });
-
-  const onSubmit = async (data: InputForm) => {
-    try {
-      const response: LeadResponseOrUndefined = await postLead(data);
-      if (response) toast.success(response.message);
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        toast.error(error.message);
-      } else {
-        toast.error("Não foi possível enviar dados");
-      }
-    }
-  };
 
   return (
     <form
