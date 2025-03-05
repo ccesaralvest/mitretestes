@@ -38,8 +38,8 @@ const events = [
   },
 ];
 
-const EventCardComponent = ({ onEventSelect }: any) => {
-  const handleRegisterClick = (event: any) => {
+const EventCardComponent =  ({ onEventSelect }: { onEventSelect: (data: { name: string; email: string; fone: string; date: string; time: string, title: string }) => void }) => {
+  const handleRegisterClick = (event: { dates: string; time: string; title: string }) => {
     const eventData = {
       name: "",
       email: "",  
