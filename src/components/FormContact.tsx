@@ -33,9 +33,14 @@ export default function ContactForm({
 }: ContactFormProps) {
 
 
+  const handleFormSubmit: SubmitHandler<FormValues> = (data) => {
+    console.log("Dados enviados:", data);
+    onSubmit(data);  
+  };
+
   return (
     <form
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit(handleFormSubmit)}
       className="mt-8 p-3 w-full  relative z-10"
     >
       <Card className=" w-full shadow-black shadow-2xl  rounded-sm p-5 ">

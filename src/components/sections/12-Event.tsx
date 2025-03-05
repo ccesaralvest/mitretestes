@@ -49,7 +49,7 @@ const EventCardComponent =  ({ onEventSelect }: { onEventSelect: (data: { name: 
       title: event.title,
     };
 
-    console.log("Evento Selecionado:", eventData);
+
     onEventSelect(eventData);
   };
   return (
