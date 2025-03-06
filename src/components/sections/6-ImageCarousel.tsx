@@ -92,11 +92,14 @@ const ImageCarousel = () => {
         </div>
       </div>
 
-      <div   data-aos="fade-up"
+      <div
+        data-aos="fade-up"
         data-aos-offset="200"
         data-aos-delay="50"
         data-aos-mirror="true"
-        data-aos-once="false" className="relative flex justify-center items-center z-10 w-full">
+        data-aos-once="false"
+        className="relative flex justify-center items-center z-10 w-full"
+      >
         {/* Botões de navegação */}
         <ChevronRight
           className="absolute z-20 cursor-pointer right-0 sm:right-10 sm:top-1/2 transform -translate-y-1/2"
@@ -112,7 +115,6 @@ const ImageCarousel = () => {
           onClick={() => api?.scrollPrev()}
           strokeWidth={1}
         />
-        
 
         <Carousel
           setApi={setApi}
@@ -142,10 +144,9 @@ const ImageCarousel = () => {
 
                     <Dialog>
                       <DialogTrigger>
-                        <Image
+                        <img
                           src={img.src}
                           alt={img.description}
-                          fill
                           className="object-cover cursor-pointer"
                         />
                       </DialogTrigger>
@@ -154,10 +155,9 @@ const ImageCarousel = () => {
                           {img.description}
                         </DialogTitle>
                         <div className="relative w-full h-full">
-                          <Image
+                          <img
                             src={img.src}
                             alt={img.description}
-                            fill
                             className="object-contain"
                           />
                         </div>

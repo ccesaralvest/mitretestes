@@ -7,23 +7,12 @@ const Hero = () => (
     <div className="w-full flex justify-between self-center mt-[67px] md:mt-[75px] relative">
       <div className="absolute bottom-0 opacity-[0.3] left-0 w-full h-[60%] bg-[url(/imgs/cement-wall.jpeg)] bg-cover bg-bottom z-[-1]"></div>
       <div className="relative flex flex-col  flex-1 justify-end">
-        {/*  <div className="relative max-w-[285px] max-h-[300px] w-[4.12rem] h-[1.75rem]  sm:w-[6.5rem] sm:h-[2.75rem] md:h-[2.90rem] md:w-[6.65rem] lg:h-[3.05rem] xl:h-[4.20rem] xl:w-[14rem] left-1/2">
-          <Image
-            src="./imgs/logo-station.svg"
-            alt="LOGO STATION"
-            layout="responsive"
-            className=" w-full h-auto object-cover "
-            width={208}
-            height={220}
-          />
-        </div> */}
+      
         <div className="relative">
           <div className="relative z-20">
-            <Image
-              src="/imgs/fachada.png"
+            <img
+              src="/imgs/fachada-topo.png"
               alt="LOGO STATION"
-              width={329}
-              height={205}
               className="w-full h-auto object-cover"
             />
           </div>
@@ -38,23 +27,20 @@ const Hero = () => (
       <div className="flex flex-col flex-1 justify-around md:justify-between items-start">
         <div className="z-10 w-[50%] mt-8 ml-[11%]">
           {/* Imagem corrigida */}
-          <Image
+          <img
             src="/imgs/logo-station.svg"
             alt="LOGO STATION"
-            width={208}
-            height={220}
+          
             className="w-full h-auto object-cover"
           />
         </div>
 
         <div className="flex flex-col items-end justify-center gap-1 mr-2 sm:mr-10 md:mr-8 md:gap-4 lg:mr-5 max-w-[60%] ml-[7%] h-[50%]">
           <div className="flex items-start justify-center gap-2 xl:gap-8">
-            {/* Imagem corrigida */}
-            <Image
+            {/* imgm corrigida */}
+            <img
               src="/imgs/medida_topo.png"
               alt="Euture"
-              width={515}
-              height={384}
               className="w-full h-auto object-cover"
             />
           </div>

@@ -33,12 +33,11 @@ function LocationItemOutput() {
           data-aos-once="false"
           className="hidden md:block absolute w-full h-full z-10  md:max-w-[430px] lg:max-w-[540px] left-0 top-[-32px] md:top-0"
         >
-          <Image
+          <img
             src="/imgs/gastroImage.png"
             alt="Gastro Image"
             className=" w-full h-auto object-cover "
-            width={208}
-            height={220}
+            
           />
         </div>
         <div
@@ -50,12 +49,11 @@ function LocationItemOutput() {
           className="w-full max-w-7xl flex flex-col md:flex-row z-10"
         >
           <div className="w-full md:w-[41%] pt-[24px] md:pt-0 md:pr-0">
-            <Image
+            <img
               src="/imgs/gastroImage-mobile.png"
               alt="Gastro Image"
               className=" w-full h-auto object-cover md:hidden"
-              width={208}
-              height={220}
+             
             />
           </div>
           <div className="w-full  p-8 md:py-16 md:px-0 md:w-[59%] mt-4 md:mt-0 md:flex md:items-end lg:flex lg:items-center md:mt-[6px] lg:mt-[28px]">

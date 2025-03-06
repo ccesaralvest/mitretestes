@@ -10,7 +10,7 @@ function LocationItem({ name, minutes }: { name: string; minutes: number }) {
         <span className="mr-1 ml-[3px] text-black font-unineue">
           <strong > - {minutes } MIN</strong>
         </span>
-        <Image src="/imgs/car-icon.svg" alt="Pin Car" width={10} height={10} className=""   />
+        <img src="/imgs/car-icon.svg" alt="Pin Car"   className="w-[10px] h-[10px]"   />
       </div>
     </div>
   );

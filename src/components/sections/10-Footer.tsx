@@ -10,10 +10,10 @@ export default function Footer() {
         data-aos-mirror="true"
         data-aos-once="false" className="sm:flex gap-8">
         <div className="relative w-[10.42rem] h-[2.45rem] xl:w-[257px]">
-          <Image src="./imgs/mitre.svg" alt="Mitre" width={200} height={100} />
+          <img src="./imgs/mitre.svg" alt="Mitre" width={200} height={100} />
         </div>
         <div className="relative w-[10.42rem] h-[2.45rem] xl:w-[257px] ">
-          <Image
+          <img
             src="./imgs/mitre-vendas.svg"
             alt="Mitre"
             width={200}

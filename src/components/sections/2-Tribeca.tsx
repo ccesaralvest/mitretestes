@@ -47,22 +47,16 @@ const Tribeca = () => {
         </div>
         <div className="grow md:order-1  md:my-20 md:mt-6 ml-[8%] !w-[92%] md:w-[60%] w-full">
           <div className="relative   md:top-[76px] lg:top-[102px] xl:top-[140px] w-full">
-            <Image
+            <img
               src="/imgs/brooklin.png"
               alt="LOGO STATION BROOKLIN"
-              width={308}
-              height={155}
               className="w-full h-auto object-cover inset-0 z-10 absolute lg:left-[-12%]  md:left-[-10%]"
-            
             />
           </div>
           <div className="relative ">
-            <Image
+            <img
               src="/imgs/fundo-tribeca.svg"
               alt="LOGO STATION"
-          
-              width={308}
-              height={155}
               className=" w-full h-auto object-cover inset-0 z-10 "
             />
             <div className="absolute inset-0 absolute inset-0 h:[105%]">
