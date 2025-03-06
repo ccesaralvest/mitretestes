@@ -4,7 +4,7 @@ const Services = () => {
   return (
     <section id="services" className="min-h-100% bg-[#803A2C]">
       <div className="flex flex-col w-full relative md:flex-row">
-     {/*  h-[75vw] */}
+        {/*  h-[75vw] */}
         <div className="sm:flex-1 min-w-screen relative z-10  sm:h-auto sm:min-h-[600px] lg:min-h-[750px] xl:min-h-[750px]">
           <img
             src="/imgs/19-beauty.svg"
@@ -14,7 +14,10 @@ const Services = () => {
           <div className="hidden md:block h-36 w-full bg-[linear-gradient(to_bottom,rgba(128,58,44,0)_10%,#803A2C_80%)] absolute bottom-0 sm:w-36 sm:h-full sm:bg-[linear-gradient(to_right,rgba(128,58,44,0)_10%,#803A2C_80%)] sm:-right-3"></div>
         </div>
 
-        <div className="bg-[#803A2C] md:flex-1">
+        <div
+          
+          className="bg-[#803A2C] md:flex-1"
+        >
           <div className="relative max-w-[350px] sm:max-w-[400px] lg:max-w-[100%] xl:max-w-[60%] mt-12 md:mt-[98px] ml-9 uppercase text-[14px] text-white sm:text-[16px] lg:text-[16px] xl:text-[18px]">
             <span className="">
               UM PROJETO DE EXCELÊNCIA, COM A ASSINATURA DOS{" "}
@@ -29,6 +32,11 @@ const Services = () => {
 
           {/* servicesMobile */}
           <div
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-mirror="true"
+            data-aos-once="false"
             id="servicesMobile"
             className="grid leading-[25px] font-unineue md:grid lg:hidden grid-cols-2 max-w-[500px] mx-auto gap-4 p-4 text-white sm:hidden mt-10"
           >
@@ -174,6 +182,11 @@ const Services = () => {
 
           {/* servicesDesktop */}
           <div
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-mirror="true"
+            data-aos-once="false"
             id="servicesDesktop"
             className="hidden font-unineue sm:grid md:hidden lg:grid grid-cols-3 gap-0 p-12 text-white"
           >

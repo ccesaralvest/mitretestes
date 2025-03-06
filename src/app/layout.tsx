@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Haus Mitre",
-  description: "Haus Mitre LP"
+  description: "Haus Mitre LP",
 };
 
 export const viewport: Viewport = {
@@ -29,11 +29,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+      </head>
       <body
         style={{ marginRight: "0 !important" }}
         className={`${geistSans.variable} ${geistMono.variable} antialiased !m-0 !mr-0`}
       >
-
         <div className="w-full h-full">{children}</div>
         <Toaster
           richColors
@@ -41,6 +43,8 @@ export default function RootLayout({
             duration: 5000,
           }}
         />
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
       </body>
     </html>
   );
