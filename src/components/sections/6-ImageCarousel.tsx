@@ -112,16 +112,7 @@ const ImageCarousel = () => {
           onClick={() => api?.scrollPrev()}
           strokeWidth={1}
         />
-        {/* Fundo com gradiente e imagem */}
-        {/*   <div
-          className="absolute inset-0 bg-no-repeat bg-left"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle, #fff 80%, hsl(0, 0%, 85.8%) 100%), url('/imgs/cement-wall.jpeg')",
-            backgroundSize: "cover, 50% 100%",
-            backgroundPosition: "center, left",
-          }}
-        ></div> */}
+        
 
         <Carousel
           setApi={setApi}

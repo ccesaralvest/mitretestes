@@ -1,34 +1,9 @@
 import Image from "next/image";
-/* import DormBox, { DormBoxProps } from "../DormBox"; */
-import CustomButton from "../CustomButton";
 
-/* const dorms: DormBoxProps[] = [
-  {
-    type: "2 DORMS",
-    meters: 63,
-    additionals: "SUÍTE · VAGA**",
-  },
-  {
-    type: "1 DORM",
-    meters: 43,
-    additionals: "SUÍTE · VAGA**",
-  },
-  {
-    type: "1 DORM",
-    meters: 31,
-  },
-  {
-    type: "STUDIO",
-    meters: 26,
-  },
-]; */
+import CustomButton from "../CustomButton";
 
 const Hero = () => (
   <section id="homeHero" className="w-full flex flex-col">
-  {/*   <h1 className="w-full max-w-[12rem] sm:max-w-[12rem] mx-auto mt-4 text-center border-l border-r border-b border-foreground font-adero font-medium text-base sm:text-lg md:text-xl">
-      PRÉ-LANÇAMENTO
-    </h1> */}
-
     <div className="w-full flex justify-between self-center mt-[67px] md:mt-[75px] relative">
       <div className="absolute bottom-0 opacity-[0.3] left-0 w-full h-[60%] bg-[url(/imgs/cement-wall.jpeg)] bg-cover bg-bottom z-[-1]"></div>
       <div className="relative flex flex-col  flex-1 justify-end">
@@ -47,12 +22,9 @@ const Hero = () => (
             <Image
               src="/imgs/fachada.png"
               alt="LOGO STATION"
-              className="w-full h-auto object-cover"
-              objectFit="cover"
-              layout="responsive"
               width={329}
               height={205}
-             
+              className="w-full h-auto object-cover"
             />
           </div>
           <div className="absolute inset-0">
@@ -65,45 +37,39 @@ const Hero = () => (
       </div>
       <div className="flex flex-col flex-1 justify-around md:justify-between items-start">
         <div className="z-10 w-[50%] mt-8 ml-[11%]">
-          {/*  <Image
-            src="./imgs/euture.svg"
-            alt="Euture"
-            layout="responsive"
-            className="w-full h-auto object-fit"
-            width={514.6}
-            height={384.06}
-          /> */}
+          {/* Imagem corrigida */}
           <Image
-            src="./imgs/logo-station.svg"
+            src="/imgs/logo-station.svg"
             alt="LOGO STATION"
-            layout="responsive"
-            className=" w-full h-auto object-cover "
             width={208}
             height={220}
+            className="w-full h-auto object-cover"
           />
         </div>
+
         <div className="flex flex-col items-end justify-center gap-1 mr-2 sm:mr-10 md:mr-8 md:gap-4 lg:mr-5 max-w-[60%] ml-[7%] h-[50%]">
           <div className="flex items-start justify-center gap-2 xl:gap-8">
+            {/* Imagem corrigida */}
             <Image
               src="/imgs/medida_topo.png"
               alt="Euture"
-              layout="responsive"
-              className="w-full h-auto object-fit"
-              width={514.6}
-              height={384.06}
+              width={515}
+              height={384}
+              className="w-full h-auto object-cover"
             />
           </div>
 
           <p
             className="text-[0.5rem] leading-[10px] md:leading-[1.2rem] sm:text-[0.55rem] md:text-[0.75rem] lg:text-[0.85rem] xl:text-[1rem]    
-   text-black uppercase font-adero text-end self-end max-w-[100%]"
+       text-black uppercase font-adero text-end self-end max-w-[100%]"
           >
             Viva com <strong>praticidade</strong> e <strong>conecte-se</strong>{" "}
             <br />
             com o <strong>melhor de São Paulo</strong>.
           </p>
+
           <a href="#contact" className="block">
-          <CustomButton />
+            <CustomButton />
           </a>
         </div>
       </div>

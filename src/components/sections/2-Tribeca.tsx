@@ -37,22 +37,7 @@ const Tribeca = () => {
                 relaxamento ao convívio social, trazendo a vibração cosmopolita
                 de Tribeca com o charme acolhedor do Brooklin.
               </p>
-              {/*  <p>
-              Tem cultura diversificada, que inclui um festival de cinema,
-              restaurantes famosos e tours históricos, atraindo mentes criativas
-              de todo o mundo. É um bairro repleto de galerias de arte e
-              fotografia, bibliotecas e livrarias, produtoras e sets de
-              filmagem, cafés, bares e restaurantes. Além disso, o bairro conta
-              com um dos maiores festivais de cinema do mundo, o Tribeca
-              Festival.
-            </p>
-            <p>
-              Na arquitetura e no design temos uma grande variedade de conceitos
-              e estilos: Neo-gregos e fachadas de ferro forjado, em prédios
-              baixos em estilo loft. Além de estilos como o renascentista,
-              italiano e federal americano em contraste com prédios modernos,
-              feitos das mais atuais tecnologias.
-            </p> */}
+
               <a href="#contact" className="block">
                 <CustomButton text="SAIBA MAIS" />
               </a>
@@ -65,20 +50,20 @@ const Tribeca = () => {
             <Image
               src="/imgs/brooklin.png"
               alt="LOGO STATION BROOKLIN"
-              layout="responsive"
               width={308}
               height={155}
-              className="w-full h-full object-fill inset-0 z-10 absolute lg:left-[-12%]  md:left-[-10%]"
+              className="w-full h-auto object-cover inset-0 z-10 absolute lg:left-[-12%]  md:left-[-10%]"
+            
             />
           </div>
           <div className="relative ">
             <Image
               src="/imgs/fundo-tribeca.svg"
               alt="LOGO STATION"
-              layout="responsive"
+          
               width={308}
               height={155}
-              className=" w-full h-full object-fill inset-0 z-10 "
+              className=" w-full h-auto object-cover inset-0 z-10 "
             />
             <div className="absolute inset-0 absolute inset-0 h:[105%]">
               {/* Linhas - bordas */}

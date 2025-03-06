@@ -74,7 +74,7 @@ const Localizacao = () => {
               src="/imgs/shutterstock.jpeg"
               layout="fill"
               objectFit="cover"
-              alt=""
+              alt="shutterstock"
             />
           </div>
           <div className="font-unineue uppercase text-[12px] text-black p-14 text-sm/6 space-y-5 flex-col order-2 sm:ml-[7rem]  ">
