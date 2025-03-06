@@ -29,9 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
+      {/* <head>
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-      </head>
+      </head> */}
       <body
         style={{ marginRight: "0 !important" }}
         className={`${geistSans.variable} ${geistMono.variable} antialiased !m-0 !mr-0`}
@@ -44,7 +44,7 @@ export default function RootLayout({
           }}
         />
 
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      {/*   <script src="https://unpkg.com/aos@next/dist/aos.js"></script> */}
       </body>
     </html>
   );
