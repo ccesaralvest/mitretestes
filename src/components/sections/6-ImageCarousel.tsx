@@ -55,7 +55,7 @@ const ImageCarousel = () => {
       id="galeria"
       className="relative min-h-screen flex flex-col justify-evenly items-center md:pt-[64px] xl:py-[7rem]"
     >
-      <div className="absolute z-10 bg-[url(/imgs/cement-wall.jpeg)] opacity-[0.6] bg-cover bg-center bg-no-repeat bottom-0 h-[35%] w-full"></div>
+      <div className="absolute z-10 bg-[url(/imgs/TEX-CIMENTO.png)]   bg-cover bg-center bg-no-repeat bottom-0 h-[35%] w-full"></div>
 
       <div
         data-aos="fade-up"
@@ -92,14 +92,11 @@ const ImageCarousel = () => {
         </div>
       </div>
 
-      <div
-        data-aos="fade-up"
+      <div   data-aos="fade-up"
         data-aos-offset="200"
         data-aos-delay="50"
         data-aos-mirror="true"
-        data-aos-once="false"
-        className="relative flex justify-center items-center z-10 w-full"
-      >
+        data-aos-once="false" className="relative flex justify-center items-center z-10 w-full">
         {/* Botões de navegação */}
         <ChevronRight
           className="absolute z-20 cursor-pointer right-0 sm:right-10 sm:top-1/2 transform -translate-y-1/2"
@@ -115,6 +112,7 @@ const ImageCarousel = () => {
           onClick={() => api?.scrollPrev()}
           strokeWidth={1}
         />
+        
 
         <Carousel
           setApi={setApi}
@@ -144,9 +142,11 @@ const ImageCarousel = () => {
 
                     <Dialog>
                       <DialogTrigger>
-                        <img
+                        <Image
                           src={img.src}
                           alt={img.description}
+                          fill
+                        
                           className="object-cover cursor-pointer"
                         />
                       </DialogTrigger>
@@ -155,9 +155,11 @@ const ImageCarousel = () => {
                           {img.description}
                         </DialogTitle>
                         <div className="relative w-full h-full">
-                          <img
+                          <Image
                             src={img.src}
                             alt={img.description}
+                            fill
+                          
                             className="object-contain"
                           />
                         </div>

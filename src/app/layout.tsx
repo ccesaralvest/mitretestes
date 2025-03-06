@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Haus Mitre",
-  description: "Haus Mitre LP",
+  title: "Haus Mitre Station Brooklin | A poucos passos do Metrô Brooklin",
+  description: "Haus Mitre Station Brooklin | A poucos passos do Metrô Brooklin",
 };
 
 export const viewport: Viewport = {

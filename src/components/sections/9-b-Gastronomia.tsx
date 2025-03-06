@@ -1,6 +1,7 @@
+"use client";
 import React from "react";
 import LocationItem from "../ui/LocationPin";
-import Image from "next/image";
+ 
 
 function LocationItemOutput() {
   return (
@@ -9,13 +10,13 @@ function LocationItemOutput() {
       className="relative min-h-screen bg-white  md:p-8 md:p-0 pb-[74px] md:pt-[67px]"
     >
       <img
-        src="/imgs/old-cement.svg"
+        src="/imgs/old-mob-cimento.png"
         className="absolute md:hidden bottom-0 right-0 h-[50px]"
         alt="Old Cement"
       />
 
       <img
-        src="/imgs/old-cement-desk.svg"
+        src="/imgs/old-desktop-cimento.png"
         className="absolute hidden h-[80px] md:block bottom-0 right-0 mt-4"
         alt="Old Cement"
       />

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 
 const Services = () => {
@@ -7,7 +8,7 @@ const Services = () => {
         {/*  h-[75vw] */}
         <div className="sm:flex-1 min-w-screen relative z-10  sm:h-auto sm:min-h-[600px] lg:min-h-[750px] xl:min-h-[750px]">
           <img
-            src="/imgs/19-beauty.svg"
+            src="/imgs/imgsCarousel/BEATYCARE.jpg"
             className="object-fill sm:object-cover h-full w-full"
             alt="Preparando quarto de hotel"
           />

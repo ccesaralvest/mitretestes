@@ -1,10 +1,11 @@
-/* import Image from "next/image"; */
+"use client";
+import React from "react";
 
 const LocalCity = () => {
   return (
     <section 
      id="localCity" className="min-h-screen md:min-h-full sm:pt-[64px] relative">
-      <div className="absolute bottom-0 opacity-[0.4] left-0 w-full h-full bg-[url(/imgs/cement-wall.jpeg)] bg-cover bg-bottom z-[-0]"></div>
+      <div className="absolute bottom-0   left-0 w-full h-full bg-[url(/imgs/TEX-CIMENTO.png)] bg-cover bg-bottom z-[-0]"></div>
 
       <div   data-aos="fade-up"
         data-aos-offset="200"

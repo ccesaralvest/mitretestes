@@ -1,4 +1,4 @@
-import Image from "next/image";
+/* import Image from "next/image";
 import ConfiraTodosItens from "../ConfiraTodosItens";
 import Map from "../Map";
 
@@ -7,7 +7,7 @@ const Localizacao = () => {
     <section id="localizacao" className="sm:hidden">
       <ConfiraTodosItens />
       <div className="relative flex flex-col items-center w-full h-full  sm:flex-row  sm:h-[49.1rem]">
-        <div className="bg-[url(/imgs/cement-wall.jpeg)] opacity-[0.4] h-full mt-[10rem]  w-full sm:h-[938px] sm:mt-[10rem] absolute "></div>
+        <div className="bg-[url(/imgs/TEX-CIMENTO.png)]   h-full mt-[10rem]  w-full sm:h-[938px] sm:mt-[10rem] absolute "></div>
         <div className="relative w-full h-[251px] mt-7 sm:h-full sm:flex-1  sm:order-2  sm:w-[146px] xl:-mt-[5rem]  xl:mr-16">
           <Image
             src="/imgs/localizacao.png"
@@ -190,3 +190,4 @@ const Localizacao = () => {
 };
 
 export default Localizacao;
+ */

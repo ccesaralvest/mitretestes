@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 
 interface AreaItem {
@@ -35,17 +36,17 @@ const FloorPlan: React.FC = () => {
   return (
     <section id="areasComuns" className="relative min-h-screen mb-[16px] sm:mb-[0] md:py-[54px] lg:pt-[74px]">
       <img
-        src="/imgs/old-cement.svg"
+        src="/imgs/old-mob-cimento.png"
         className="absolute md:hidden bottom-0 right-0"
         alt="Old Cement"
       />
       <img
-        src="/imgs/old-cement.svg"
+        src="/imgs/old-mob-cimento.png"
         className="absolute md:hidden top-0 right-0 mt-4"
         alt="Old Cement"
       />
       <img
-        src="/imgs/old-cement-desk.svg"
+        src="/imgs/old-desktop-cimento.png"
         className="absolute hidden h-14 md:block bottom-0 left-0 mt-4"
         alt="Old Cement"
       />

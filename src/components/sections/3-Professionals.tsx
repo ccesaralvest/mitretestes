@@ -14,7 +14,7 @@ const professionals = [
     role: "PROJETO INTERIORES",
     description:
       "O projeto de interiores do Haus Mitre Station Brooklin foi inspirado em Tribeca, trazendo um conceito cosmopolita e contemporâneo com elementos da atmosfera nova-iorquina. Tons de terracota, concreto, cinza e caramelo, combinados com texturas de tijolos e couro, conferem elegância e personalidade. As áreas comuns foram projetadas para oferecer conforto e uma experiência diversificada de espaços, criando uma atmosfera que remete a Tribeca em cada detalhe.",
-    imageUrl: "/imgs/p2.svg",
+    imageUrl: "/imgs/P2-novo.png",
   },
   {
     name: "NÚCLEO ARQUITETURA DA PAISAGEM",
@@ -53,7 +53,7 @@ const Professionals = () => {
           </div>
 
           {/* Right Box */}
-          <div className="bg-[url(/imgs/cement-wall.jpeg)] opacity-[0.4] bg-cover bg-center bg-no-repeat mb-[57px] md:mb-[0] h-[50%] md:h-[100%] md:max-w-[56vw] lg:max-w-[64vw] w-full"></div>
+          <div className="bg-[url(/imgs/TEX-CIMENTO.png)]   bg-cover bg-center bg-no-repeat mb-[57px] md:mb-[0] h-[50%] md:h-[100%] md:max-w-[56vw] lg:max-w-[64vw] w-full"></div>
         </div>
       </div>
 

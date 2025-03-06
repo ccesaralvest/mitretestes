@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import React from "react";
 import CustomButton from "../CustomButton";
 
 const Tribeca = () => {
@@ -48,14 +48,14 @@ const Tribeca = () => {
         <div className="grow md:order-1  md:my-20 md:mt-6 ml-[8%] !w-[92%] md:w-[60%] w-full">
           <div className="relative   md:top-[76px] lg:top-[102px] xl:top-[140px] w-full">
             <img
-              src="/imgs/brooklin.png"
+              src="/imgs/brooklin-onboard-novo.png"
               alt="LOGO STATION BROOKLIN"
-              className="w-full h-auto object-cover inset-0 z-10 absolute lg:left-[-12%]  md:left-[-10%]"
+              className="w-full h-auto object-cover inset-0 z-10 left-[-10vw] absolute lg:left-[-16vw] xl:left-[-13vw] md:left-[-13vw]"
             />
           </div>
           <div className="relative ">
             <img
-              src="/imgs/fundo-tribeca.svg"
+              src="/imgs/TEX-CIMENTO.png"
               alt="LOGO STATION"
               className=" w-full h-auto object-cover inset-0 z-10 "
             />

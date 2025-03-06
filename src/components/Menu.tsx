@@ -18,7 +18,7 @@ export default function Menu() {
     { text: "HOME", href: "#homeHero" },
     { text: "PROFISSIONAIS", href: "#professionals" },
     { text: "GALERIA", href: "#galeria" },
-    { text: "SERVIÇOS", href: "#services" },
+    { text: "PARCEIROS", href: "#services" },
     { text: "ÁREAS COMUNS", href: "#areasComuns" },
     { text: "PLANTAS", href: "#plantas-residenciais" },
     { text: "LOCALIZAÇÃO", href: "#localCity" },
