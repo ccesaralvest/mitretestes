@@ -30,7 +30,11 @@ export default function Contact({
 }: ContactProps) {
   return (
     <section id="contact">
-      <div className="flex flex-col items-center w-full pt-[67px]">
+      <div   data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-mirror="true"
+        data-aos-once="false" className="flex flex-col items-center w-full pt-[67px]">
         <div className="relative mt-5 w-[207px] sm:w-[369px] md:-ml-[10%]">
           <span className="font-adero text-black text-base uppercase text-[16px] sm:text-[1.4rem] ">
             FALE COM NOSSOS ESPECIALISTAS

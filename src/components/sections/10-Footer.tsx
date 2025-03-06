@@ -4,7 +4,11 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   return (
     <footer className="w-full h-[61.81rem] bg-black flex flex-col items-center gap-14 py-20 px-10">
-      <div className="sm:flex gap-8">
+      <div   data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-mirror="true"
+        data-aos-once="false" className="sm:flex gap-8">
         <div className="relative w-[10.42rem] h-[2.45rem] xl:w-[257px]">
           <Image src="./imgs/mitre.svg" alt="Mitre" width={200} height={100} />
         </div>
@@ -18,8 +22,16 @@ export default function Footer() {
         <p className="max-w-[200px] mt-[-12px] font-unineue text-gray-400 text-[12px] text-center text-white">CRECI J-26794</p>
         </div>
       </div>
-      <div className="border border-[#803A2C]  w-[18.25rem] xl:w-[50%]"></div>
-      <div className="font-unineue  text-white text-center text-[12px] space-y-6 sm:text-[14px] xl:px-56">
+      <div   data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-mirror="true"
+        data-aos-once="false" className="border border-[#803A2C]  w-[18.25rem] xl:w-[50%]"></div>
+      <div   data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-mirror="true"
+        data-aos-once="false" className="font-unineue  text-white text-center text-[12px] space-y-6 sm:text-[14px] xl:px-56">
         <p>
           O empreendimento imobiliário só será comercializado após a devida
           aprovação do Projeto de Edificação Nova perante a municipalidade e o

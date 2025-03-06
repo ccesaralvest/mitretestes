@@ -143,7 +143,14 @@ function PlantasResidenciais() {
       </div>
 
       <div id="imagem-plantas" className="max-w-[1200px] mx-auto px-4 py-8">
-        <div className="flex flex-col lg:flex-row">
+        <div
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-mirror="true"
+          data-aos-once="false"
+          className="flex flex-col lg:flex-row"
+        >
           <div className="lg:w-1/2 lg:pr-12 md:min-h-[350px]">
             <div className="hidden md:grid md:grid-cols-4 md:gap-0 mb-6">
               {apartmentTypes.map((apt, index) => (

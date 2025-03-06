@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function LocationItemOutput() {
   return (
-    <section id="gastronomia" className="relative min-h-screen bg-white  md:p-8 md:p-0 pb-[74px] md:pt-[67px]">
+    <section     id="gastronomia" className="relative min-h-screen bg-white  md:p-8 md:p-0 pb-[74px] md:pt-[67px]">
        <img
         src="/imgs/old-cement.svg"
         className="absolute md:hidden bottom-0 right-0 h-[50px]"
@@ -22,7 +22,11 @@ function LocationItemOutput() {
         alt="Old Cement"
       />
       <div className="relative h-full w-full flex items-center justify-center px-0 md:px-0   md:pb-0">
-        <div className="hidden md:block absolute w-full h-full z-10  md:max-w-[430px] lg:max-w-[540px] left-0 top-[-32px] md:top-0">
+        <div   data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-mirror="true"
+        data-aos-once="false" className="hidden md:block absolute w-full h-full z-10  md:max-w-[430px] lg:max-w-[540px] left-0 top-[-32px] md:top-0">
           <Image
             src="/imgs/gastroImage.png"
             alt="Gastro Image"
@@ -32,7 +36,11 @@ function LocationItemOutput() {
             height={220}
           />
         </div>
-        <div className="w-full max-w-7xl flex flex-col md:flex-row z-10">
+        <div   data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-mirror="true"
+        data-aos-once="false" className="w-full max-w-7xl flex flex-col md:flex-row z-10">
           <div className="w-full md:w-[41%] pt-[24px] md:pt-0 md:pr-0">
             <Image
               src="/imgs/gastroImage-mobile.png"

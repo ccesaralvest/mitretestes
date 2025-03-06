@@ -21,6 +21,8 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 type InputForm = {
   name: string;
@@ -81,6 +83,13 @@ export default function Home() {
   }) => {
     setEventData(data);
   };
+  
+ useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
 
   useEffect(() => {
     const checkHash = () => {

@@ -54,8 +54,12 @@ const FloorPlan: React.FC = () => {
         className="absolute hidden md:block left-0 top-1/2 -translate-y-1/2 h-[28%]"
         alt="Old Cement"
       />
-      <div className="relative w-full pl-[27px] md:pl-4 xl:pl-[3rem] -mt-[1rem] min-h-[130px] pb-[18px] font-unineue text-black xl:max-h-[210px] lg:max-h-[180px] md:max-h-[160px] flex flex-row flex-nowrap items-end">
-        <div className="w-full max-w-[200px] sm:max-w-[200px] md:ml-[3rem] ml-2 md:mt-[3rem] md:h-full md:max-w-[210px] lg:max-w-[250px] xl:max-w-[400px] flex flex-row items-end">
+      <div   data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-mirror="true"
+        data-aos-once="false" className="relative w-full pl-[27px] md:pl-4 xl:pl-[3rem] -mt-[1rem] min-h-[130px] pb-[18px] font-unineue text-black xl:max-h-[210px] lg:max-h-[180px] md:max-h-[160px] flex flex-row flex-nowrap items-end">
+        <div  className="w-full max-w-[200px] sm:max-w-[200px] md:ml-[3rem] ml-2 md:mt-[3rem] md:h-full md:max-w-[210px] lg:max-w-[250px] xl:max-w-[400px] flex flex-row items-end">
           <span className="relative uppercase font-adero text-black text-[14px] md:text-[16px] lg:text-[18px] xl:text-[24px] md:mb-[.875rem] md:ml-[0.3rem] lg:ml-[0.5rem] md:p-[4px]">
             <span>Implantação das </span>
             <strong>áreas comuns</strong>
@@ -68,7 +72,11 @@ const FloorPlan: React.FC = () => {
       </div>
       <div className="max-w-7xl mx-auto px-4 py-8 text-black font-unineue">
         {/* Desktop Layout */}
-        <div className="hidden md:flex gap-8">
+        <div   data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-mirror="true"
+        data-aos-once="false" className="hidden md:flex gap-8">
           {/* Left side - Areas List */}
           <div className="w-1/4 md:pl-[2%]">
             <div>
@@ -114,7 +122,11 @@ const FloorPlan: React.FC = () => {
         </div>
 
         {/* Mobile Layout */}
-        <div className="md:hidden">
+        <div   data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-mirror="true"
+        data-aos-once="false" className="md:hidden">
           {/* Floor Plan Image */}
           <div className="mb-6">
             <div className="relative">

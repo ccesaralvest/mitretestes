@@ -57,7 +57,14 @@ const ImageCarousel = () => {
     >
       <div className="absolute z-10 bg-[url(/imgs/cement-wall.jpeg)] opacity-[0.6] bg-cover bg-center bg-no-repeat bottom-0 h-[35%] w-full"></div>
 
-      <div className="flex justify-around w-full">
+      <div
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        className="flex justify-around w-full"
+      >
         {/* Left Box */}
         <div className="relative w-full pl-[27px] md:pl-3 xl:pl-[3rem] -mt-[4rem] min-h-[130px] pb-[18px] font-unineue text-black xl:max-h-[210px] lg:max-h-[180px] md:max-h-[160px] flex flex-row flex-nowrap items-end">
           <div className="w-full max-w-[65%] sm:max-w-[100%] md:ml-[3rem] ml-2 md:h-full md:max-w-1/2 flex flex-row items-end">
@@ -85,7 +92,11 @@ const ImageCarousel = () => {
         </div>
       </div>
 
-      <div className="relative flex justify-center items-center z-10 w-full">
+      <div   data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-mirror="true"
+        data-aos-once="false" className="relative flex justify-center items-center z-10 w-full">
         {/* Botões de navegação */}
         <ChevronRight
           className="absolute z-20 cursor-pointer right-0 sm:right-10 sm:top-1/2 transform -translate-y-1/2"
