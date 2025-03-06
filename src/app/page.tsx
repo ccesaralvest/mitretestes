@@ -39,7 +39,14 @@ const InputFormSchema = z.object({
 export default function Home() {
   const [showEventOnly, setShowEventOnly] = useState(false);
   const [readPolicy, setReadPolicy] = useState(false);
-  const [eventData, setEventData] = useState<{ name: string; email: string; fone: string; date: string; time: string, title: string } | null>(null);
+  const [eventData, setEventData] = useState<{
+    name: string;
+    email: string;
+    fone: string;
+    date: string;
+    time: string;
+    title: string;
+  } | null>(null);
 
   const {
     register,
@@ -55,19 +62,32 @@ export default function Home() {
       const response: LeadResponseOrUndefined = await postLead(data);
       if (response) toast.success(response.message);
     } catch (error: unknown) {
-      toast.error(error instanceof Error ? error.message : "Não foi possível enviar os dados");
+      toast.error(
+        error instanceof Error
+          ? error.message
+          : "Não foi possível enviar os dados"
+      );
     }
   };
 
   // Captura os valores do EventCardComponent
-  const handleEventData = (data: { name: string; email: string; fone: string; date: string; time: string, title: string }) => {
+  const handleEventData = (data: {
+    name: string;
+    email: string;
+    fone: string;
+    date: string;
+    time: string;
+    title: string;
+  }) => {
     setEventData(data);
   };
 
   useEffect(() => {
     const checkHash = () => {
       if (typeof window !== "undefined") {
-        setShowEventOnly(window.location.hash === "#eventCard" || window.location.hash === "#contact");
+        setShowEventOnly(
+          window.location.hash === "#eventCard"
+        );
       }
     };
 
@@ -79,7 +99,9 @@ export default function Home() {
   useEffect(() => {
     if (showEventOnly) {
       setTimeout(() => {
-        document.getElementById(window.location.hash.substring(1))?.scrollIntoView({ behavior: "smooth" });
+        document
+          .getElementById(window.location.hash.substring(1))
+          ?.scrollIntoView({ behavior: "smooth" });
       }, 500);
     }
   }, [showEventOnly]);
@@ -89,7 +111,9 @@ export default function Home() {
       setTimeout(() => {
         const currentHash = window.location.hash;
         if (currentHash) {
-          document.getElementById(currentHash.substring(1))?.scrollIntoView({ behavior: "smooth" });
+          document
+            .getElementById(currentHash.substring(1))
+            ?.scrollIntoView({ behavior: "smooth" });
         }
       }, 500);
     }
@@ -100,7 +124,10 @@ export default function Home() {
       setValue("name", eventData.name);
       setValue("email", eventData.email);
       setValue("fone", eventData.fone);
-      setValue("message", `AGENDAMENTO  - Evento: ${eventData.title}, data: ${eventData.date}, hora: ${eventData.time}`);
+      setValue(
+        "message",
+        `AGENDAMENTO  - Evento: ${eventData.title}, data: ${eventData.date}, hora: ${eventData.time}`
+      );
     }
   }, [eventData, setValue]);
 
@@ -113,14 +140,6 @@ export default function Home() {
       {showEventOnly ? (
         <>
           <EventCardComponent onEventSelect={handleEventData} />
-          <Contact
-            handleSubmit={handleSubmit}
-            register={register}
-            errors={errors}
-            onSubmit={onSubmit}
-            readPolicy={readPolicy}
-            setReadPolicy={setReadPolicy}
-          />
         </>
       ) : (
         <>
@@ -136,7 +155,14 @@ export default function Home() {
           <LocationItemOutput />
         </>
       )}
-
+      <Contact
+        handleSubmit={handleSubmit}
+        register={register}
+        errors={errors}
+        onSubmit={onSubmit}
+        readPolicy={readPolicy}
+        setReadPolicy={setReadPolicy}
+      />
       <Footer />
     </>
   );
