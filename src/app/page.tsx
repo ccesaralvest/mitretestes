@@ -23,6 +23,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ContactEvents from "@/components/sections/9-b-ContactEvents";
 
 type InputForm = {
   name: string;
@@ -83,8 +84,8 @@ export default function Home() {
   }) => {
     setEventData(data);
   };
-  
- useEffect(() => {
+
+  useEffect(() => {
     AOS.init({
       duration: 1000,
       once: true,
@@ -94,9 +95,14 @@ export default function Home() {
   useEffect(() => {
     const checkHash = () => {
       if (typeof window !== "undefined") {
-        setShowEventOnly(
-          window.location.hash === "#eventCard"
-        );
+        if (
+          window.location.hash === "#eventCard" ||
+          window.location.hash === "#contactEvents"
+        ) {
+          setShowEventOnly(true);
+        } else {
+          setShowEventOnly(false);
+        }
       }
     };
 
@@ -123,7 +129,12 @@ export default function Home() {
           document
             .getElementById(currentHash.substring(1))
             ?.scrollIntoView({ behavior: "smooth" });
+            setValue("name", "");
+            setValue("email", "");
+            setValue("fone", "");
+            setValue("message", "");
         }
+
       }, 500);
     }
   }, [showEventOnly]);
@@ -149,6 +160,14 @@ export default function Home() {
       {showEventOnly ? (
         <>
           <EventCardComponent onEventSelect={handleEventData} />
+          <ContactEvents
+            handleSubmit={handleSubmit}
+            register={register}
+            errors={errors}
+            onSubmit={onSubmit}
+            readPolicy={readPolicy}
+            setReadPolicy={setReadPolicy}
+          />
         </>
       ) : (
         <>
@@ -162,16 +181,16 @@ export default function Home() {
           <PlantasResidenciais />
           <LocalCity />
           <LocationItemOutput />
+          <Contact
+            handleSubmit={handleSubmit}
+            register={register}
+            errors={errors}
+            onSubmit={onSubmit}
+            readPolicy={readPolicy}
+            setReadPolicy={setReadPolicy}
+          />
         </>
       )}
-      <Contact
-        handleSubmit={handleSubmit}
-        register={register}
-        errors={errors}
-        onSubmit={onSubmit}
-        readPolicy={readPolicy}
-        setReadPolicy={setReadPolicy}
-      />
       <Footer />
     </>
   );

@@ -130,7 +130,7 @@ const EventCardComponent =  ({ onEventSelect }: { onEventSelect: (data: { name: 
                 </p>
 
                 <a
-                  href="#contact"
+                  href="#contactEvents"
                   onClick={() => handleRegisterClick(event)}
                   className="relative font-unineue ml-6  tracking-[0.09em] font-normal mt-2 bg-[#8B3A2A] text-white uppercase text-sm py-1 px-6 hover:bg-[#6d2e21] transition-colors"
                 >

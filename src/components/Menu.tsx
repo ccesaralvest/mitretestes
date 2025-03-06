@@ -30,7 +30,7 @@ export default function Menu() {
   const handleMenuClick = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     event.preventDefault();
 
-    if (window.location.hash === "#eventCard") {
+    if (window.location.hash === "#eventCard" || window.location.hash === "#contactEvents") {
       setTimeout(() => {
         history.replaceState(null, "", window.location.pathname);
         setTimeout(() => {
