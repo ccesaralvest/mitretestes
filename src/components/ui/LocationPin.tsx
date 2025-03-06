@@ -1,6 +1,5 @@
-import Image from "next/image";
-
- 
+"use client";
+import React from "react"; 
 
 function LocationItem({ name, minutes }: { name: string; minutes: number }) {
   return (
