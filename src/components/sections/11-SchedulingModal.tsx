@@ -10,18 +10,20 @@ import { type LeadResponseOrUndefined, postLead } from "@/api/Leads";
 interface SchedulingModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onSubmit: (formData: FormData) => void;
+  onSubmit: (formData: SchedulingModalFormData) => void;
 }
 
-interface FormData {
+ 
+interface SchedulingModalFormData {
   name: string;
   email: string;
   fone: string;
-  date: string;
-  time: string;
-  message?: string;
+  date?: string;
+  time?: string;
+  message: string;
   privacyPolicy?: boolean;
 }
+
 
 interface WeekDay {
   dayName: string;
@@ -49,12 +51,7 @@ const SchedulingModal: React.FC<SchedulingModalProps> = ({
   const [readPolicy, setReadPolicy] = useState(false);
   const [isLoading, setIsLoading] = useState(false); // Estado para controlar o carregamento
 
-  const {
-    register,
-    handleSubmit,
-    setValue,
-    formState: { errors },
-  } = useForm<FormData>({
+  const { register, handleSubmit, setValue, formState: { errors } } = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
       name: "",
@@ -64,6 +61,7 @@ const SchedulingModal: React.FC<SchedulingModalProps> = ({
       time: "",
     },
   });
+  
 
  
   const generateWeekDays = (): WeekDay[] => {
@@ -115,29 +113,29 @@ const SchedulingModal: React.FC<SchedulingModalProps> = ({
     setStep("form");
   };
 
-  const processSubmit = async (data: FormData) => {
+  const processSubmit = async (data: z.infer<typeof FormSchema>) => {
     setIsLoading(true); // Ativa o estado de carregamento
     try {
       const formattedDate = selectedDate
         ? selectedDate.toLocaleDateString("pt-BR")
         : "";
-
-      const agendamentoMessage = `AGENDAMENTO: Data: ${formattedDate}, Horário: ${data.time}`;
-
+  
+        const agendamentoMessage = `AGENDAMENTO: Data: ${formattedDate}, Horário: ${data.time}`;
+  
       const response: LeadResponseOrUndefined = await postLead({
         name: data.name,
         email: data.email,
         fone: data.fone,
         message: agendamentoMessage,
       });
-
+  
       if (response) {
         toast.success(response.message);
         onSubmit({
           ...data,
           message: agendamentoMessage,
           privacyPolicy: readPolicy,
-        });
+        }as SchedulingModalFormData);
       }
     } catch (error: unknown) {
       if (error instanceof Error) {
@@ -146,9 +144,10 @@ const SchedulingModal: React.FC<SchedulingModalProps> = ({
         toast.error("Não foi possível enviar dados");
       }
     } finally {
-      setIsLoading(false);  
+      setIsLoading(false);
     }
   };
+  
 
   const navigateWeek = (direction: "prev" | "next") => {
     const newDate = new Date(currentMonth);

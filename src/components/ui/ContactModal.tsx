@@ -9,10 +9,10 @@ interface FormData {
   name: string;
   email: string;
   fone: string;
+  date?: string;
+  time?: string;
   message: string;
-  date: string;
-  time: string;
-  privacyPolicy: boolean;
+  privacyPolicy?: boolean;
 }
 
 const ContactModal: React.FC = () => {
