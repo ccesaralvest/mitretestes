@@ -88,7 +88,7 @@ export default function ContactForm({
               id="message"
               {...register("message")}
               placeholder="MENSAGEM *"
-              className="mt-1 rounded-none border-0 border-b-2 border-b-foreground focus:border-b-primary focus:outline-none"
+              className="input-message-form mt-1 rounded-none border-0 border-b-2 border-b-foreground focus:border-b-primary focus:outline-none"
             />
             {errors.message && (
               <p className="text-red-500 text-xs mt-1">
