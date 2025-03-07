@@ -117,3 +117,6 @@ header {
   background-color: white;
   min-height: 61px;
 }
+.btn-contact {
+  right: 2%!important;
+}
