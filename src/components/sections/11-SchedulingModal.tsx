@@ -19,8 +19,8 @@ interface FormData {
   fone: string;
   date: string;
   time: string;
-  message: string;
-  privacyPolicy: boolean;
+  message?: string;
+  privacyPolicy?: boolean;
 }
 
 interface WeekDay {

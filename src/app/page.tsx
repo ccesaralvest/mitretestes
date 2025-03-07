@@ -63,7 +63,7 @@ export default function Home() {
   const onSubmit = async (data: InputForm) => {
     try {
       const response: LeadResponseOrUndefined = await postLead(data);
-      if (response) toast.success(response.message);
+      if (response) toast.success("Obrigado pelo envio");
     } catch (error: unknown) {
       toast.error(
         error instanceof Error
@@ -129,25 +129,45 @@ export default function Home() {
           document
             .getElementById(currentHash.substring(1))
             ?.scrollIntoView({ behavior: "smooth" });
-            setValue("name", "");
-            setValue("email", "");
-            setValue("fone", "");
-            setValue("message", "");
-        }
 
+          setValue("name", "");
+          setValue("email", "");
+          setValue("fone", "");
+          setValue("message", "");
+        }
+        setTimeout(() => {
+          setValue("name", "");
+          setValue("email", "");
+          setValue("fone", "");
+          setValue("message", "");
+        }, 700);
       }, 500);
     }
   }, [showEventOnly]);
 
   useEffect(() => {
     if (eventData) {
-      setValue("name", eventData.name);
-      setValue("email", eventData.email);
-      setValue("fone", eventData.fone);
-      setValue(
-        "message",
-        `AGENDAMENTO  - Evento: ${eventData.title}, data: ${eventData.date}, hora: ${eventData.time}`
-      );
+      setTimeout(() => {
+        setValue("name", eventData.name);
+        setValue("email", eventData.email);
+        setValue("fone", eventData.fone);
+
+        if (
+          window.location.hash === "#eventCard" ||
+          window.location.hash === "#contactEvents" ||
+          typeof window !== "undefined"
+        ) {
+          setValue(
+            "message",
+            `Agendamento realizado: ${eventData.title}. Data: ${eventData.date}, hora: ${eventData.time}. Local: Avenida Roque Petroni Júnior, 130 (Stand Haus Mitre Station Brooklin)`
+          );
+        }
+      }, 200);
+    } else {
+      setValue("name", "");
+      setValue("email", "");
+      setValue("fone", "");
+      setValue("message", "");
     }
   }, [eventData, setValue]);
 
