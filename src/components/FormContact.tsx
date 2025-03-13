@@ -1,11 +1,16 @@
 "use client";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "./ui/card";
 import { Checkbox } from "./ui/checkbox";
-import { SubmitHandler, UseFormHandleSubmit, UseFormRegister, FieldErrors } from "react-hook-form";
-
+import {
+  SubmitHandler,
+  UseFormHandleSubmit,
+  UseFormRegister,
+  FieldErrors,
+} from "react-hook-form";
 
 interface ContactFormProps {
   handleSubmit: UseFormHandleSubmit<FormValues>;
@@ -31,19 +36,39 @@ export default function ContactForm({
   readPolicy,
   setReadPolicy,
 }: ContactFormProps) {
+  const [fone, setFone] = useState("");
 
+  const handlePhoneChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    let value = event.target.value.replace(/\D/g, "");
+
+    if (value.length > 11) {
+      value = value.slice(0, 11);
+    }
+
+    if (value.length > 10) {
+      value = value.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3");
+    } else if (value.length > 6) {
+      value = value.replace(/(\d{2})(\d{4})(\d{0,4})/, "($1) $2-$3");
+    } else if (value.length > 2) {
+      value = value.replace(/(\d{2})(\d{0,5})/, "($1) $2");
+    } else {
+      value = value.replace(/(\d{0,2})/, "$1");
+    }
+
+    setFone(value);
+  };
 
   const handleFormSubmit: SubmitHandler<FormValues> = (data) => {
     console.log("Dados enviados:", data);
-    onSubmit(data);  
+    onSubmit({ ...data, fone });
   };
 
   return (
     <form
       onSubmit={handleSubmit(handleFormSubmit)}
-      className="mt-8 p-3 w-full  relative z-10"
+      className="mt-8 p-3 w-full relative z-10"
     >
-      <Card className=" w-full shadow-black shadow-2xl  rounded-sm p-5 ">
+      <Card className="w-full shadow-black shadow-2xl rounded-sm p-5">
         <CardContent className="space-y-5">
           <div>
             <Input
@@ -65,16 +90,15 @@ export default function ContactForm({
               className="mt-1 rounded-none border-0 border-b-2 border-b-foreground focus:border-b-primary focus:outline-none"
             />
             {errors.email && (
-              <p className="text-red-500 text-xs mt-1">
-                {errors.email.message}
-              </p>
+              <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>
             )}
           </div>
 
           <div>
             <Input
               id="fone"
-              {...register("fone")}
+              value={fone}
+              onChange={handlePhoneChange}
               placeholder="TELEFONE *"
               className="mt-1 rounded-none border-0 border-b-2 border-b-foreground focus:border-b-primary focus:outline-none"
             />
@@ -91,9 +115,7 @@ export default function ContactForm({
               className="input-message-form mt-1 rounded-none border-0 border-b-2 border-b-foreground focus:border-b-primary focus:outline-none"
             />
             {errors.message && (
-              <p className="text-red-500 text-xs mt-1">
-                {errors.message.message}
-              </p>
+              <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>
             )}
           </div>
 
@@ -106,7 +128,7 @@ export default function ContactForm({
             />
             <label
               htmlFor="terms"
-              className="text-[0.69rem] font-unineue font-medium  uppercase leading-none "
+              className="text-[0.69rem] font-unineue font-medium uppercase leading-none"
             >
               Li e concordo com as políticas de privacidade
             </label>
