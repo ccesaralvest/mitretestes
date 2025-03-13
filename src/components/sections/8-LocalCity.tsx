@@ -64,7 +64,9 @@ const LocalCity = () => {
             />
           </div>
         </div>
+
       </div>
+      <p className="adress-box">AV. ROQUE PETRONI JÚNIOR, 130 - BROOKLIN</p>
     </section>
   );
 };

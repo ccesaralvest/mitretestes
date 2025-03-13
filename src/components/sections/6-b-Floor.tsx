@@ -31,6 +31,7 @@ const FloorPlan: React.FC = () => {
     { id: "18", title: "PLAYGROUND" },
     { id: "19", title: "SQUARE" },
     { id: "20", title: "SPORTS ARENA" },
+    { id: "21", title: "PET CARE (1º PAVIMENTO)" }
   ];
 
   return (

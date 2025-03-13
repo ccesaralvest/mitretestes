@@ -63,7 +63,7 @@ export default function Home() {
   const onSubmit = async (data: InputForm) => {
     try {
       const response: LeadResponseOrUndefined = await postLead(data);
-      if (response) toast.success("Obrigado pelo envio");
+      if (response) console.log("enviado");
     } catch (error: unknown) {
       toast.error(
         error instanceof Error

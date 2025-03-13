@@ -34,7 +34,7 @@ export const postLead = async (
           "Basic TEFORElOR19NSVRSRTptZlFXZnhvUHdNbWVZY0FidkF0QWJ3Q2RFYWtKckJBOXg5cGNsOTBvS1V0N2ZsU0d4TEtNdEZZd3k0NFlEc0c3",
       },
       method: "POST",
-      body: JSON.stringify({ ...postLead, id_produto: 1234 }),
+      body: JSON.stringify({ ...postLead, id_produto: 1226 }),
     });
 
     if (!response.ok) {

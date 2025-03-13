@@ -124,3 +124,29 @@ header {
 .input-message-form {
   min-height:150px ;
 }
+
+.adress-box {
+  color: white;
+  background-color:#803A2C;
+  font-family: 'UniNeue';
+  min-width: 300px;
+  position: absolute;
+  right: 25%;
+  bottom: -14px;
+  z-index: 999;
+  font-weight: 100;
+  font-size: 13px;
+  text-align: center;
+  padding-top: 6px;
+  padding-bottom: 3px;
+}
+@media only screen and (max-width: 768px) {
+  .adress-box {
+    /* position: relative; */
+    margin: 0 auto;
+    display: block;
+    bottom: 0;
+    right: inherit;
+    width: 100%;
+  }
+}
