@@ -31,13 +31,27 @@ export default function ContactForm({
   readPolicy,
   setReadPolicy,
 }: ContactFormProps) {
-
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleFormSubmit: SubmitHandler<FormValues> = (data) => {
     console.log("Dados enviados:", data);
     onSubmit(data);
     setIsSubmitted(true);
+  };
+
+  const formatPhone = (event: React.ChangeEvent<HTMLInputElement>) => {
+    let value = event.target.value.replace(/\D/g, ""); // Remove caracteres não numéricos
+    if (value.length > 11) value = value.slice(0, 11);
+    if (value.length > 10) {
+      value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
+    } else if (value.length > 6) {
+      value = `(${value.slice(0, 2)}) ${value.slice(2, 6)}-${value.slice(6)}`;
+    } else if (value.length > 2) {
+      value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
+    } else if (value.length > 0) {
+      value = `(${value}`;
+    }
+    event.target.value = value;
   };
 
   return (
@@ -61,7 +75,7 @@ export default function ContactForm({
               </div>
 
               <div>
-                <Input id="fone" {...register("fone")} placeholder="TELEFONE *" className="mt-1 rounded-none border-0 border-b-2 border-b-foreground focus:border-b-primary focus:outline-none" />
+                <Input id="fone" {...register("fone")} placeholder="TELEFONE *" className="mt-1 rounded-none border-0 border-b-2 border-b-foreground focus:border-b-primary focus:outline-none" onInput={formatPhone} />
                 {errors.fone && <p className="text-red-500 text-xs mt-1">{errors.fone.message}</p>}
               </div>
 
