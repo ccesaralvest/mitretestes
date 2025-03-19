@@ -14,11 +14,11 @@ const Tribeca = () => {
           data-aos-easing="ease-in-out"
           data-aos-mirror="true"
           data-aos-once="false"
-          className="flex flex-wrap order-2 px-6 md:order-1 lg:w-[40%] md:w-[65%]"
+          className="flex flex-wrap order-2 px-6 md:order-1 xl:w-[40%] md:w-[65%] md:max-w-[512px] md:min-h-[500px] "
         >
           <div className="relative  md:w-[100%] font-unineue text-black mt-5 md:mr-2 pl-3 py-2 xl:pl-[3rem]">
             <div className="relative md:mb-[5rem] mb-[2rem] md:ml-8">
-              <span className="font-adero text-black text-[14px] md:text-[16px] lg:text-[18px] xl:text-[24px] left-0">
+              <span className="font-adero uppercase text-black text-[14px] md:text-[16px] lg:text-[18px] xl:text-[24px] left-0">
                 <strong>On board:</strong>
                 <span> o melhor de dois mundos.</span>
               </span>
@@ -28,7 +28,7 @@ const Tribeca = () => {
               </div>
             </div>
             <div className=" grow font-medium md:mr-2 space-y-2 md:ml-7 md:text-[9px] w-full xl:w-[40.5rem] xl:text-[1rem] xl:space-y-4 xl:mt-[3rem] md:max-w-[92%]">
-              <p className="w-full text-[0.775rem] leading-[1.625rem]">
+              <p className="w-full text-[0.675rem] font-unineue leading-[1.625rem]">
                 Tribeca e Brooklin se encontram em um estilo de vida sofisticado
                 e dinâmico. A arquitetura une elegância e modernidade, inspirada
                 na autenticidade industrial nova-iorquina, com design que
@@ -45,12 +45,12 @@ const Tribeca = () => {
             <div className="absolute -left-[2.1rem] top-1/2 transform -translate-y-1/2 w-[12px] h-[104px] bg-foreground md:w-[22px] w-[16px] xl:w-[42px] xl:h-[249px]"></div>
           </div>
         </div>
-        <div className="grow md:order-1  md:my-20 md:mt-6 ml-[8%] !w-[92%] md:w-[60%] w-full">
+        <div className="grow md:order-1  md:my-20 md:mt-6 ml-[8%]   xl:ml-[12%] 2x1:ml-[16%] !w-[92%] md:w-[60%] w-full">
           <div className="relative   md:top-[76px] lg:top-[102px] xl:top-[140px] w-full">
             <img
               src="/imgs/brooklin-onboard-novo.png"
               alt="LOGO STATION BROOKLIN"
-              className="w-full h-auto object-cover inset-0 z-10 left-[-10vw] absolute lg:left-[-16vw] xl:left-[-13vw] md:left-[-13vw]"
+              className="w-full h-auto object-cover inset-0 z-10 left-[-10vw] absolute lg:left-[-13vw] xl:left-[-13vw] md:left-[-13vw]"
             />
           </div>
           <div className="relative ">
